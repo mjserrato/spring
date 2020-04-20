@@ -24,9 +24,10 @@ class _DemoState extends State<Demo> {
               _key.currentState.animate(motion: Motion.Play);
             },
             child: Spring(
-              animType: AnimType.FadeOut,
+              animType: AnimType.FadeIn,
               key: _key,
-              delay: Duration(milliseconds: 3000),
+              autoPlay: true,
+              delay: Duration(milliseconds: 1000),
               child: SizedBox(
                 width: 70,
                 height: 70,

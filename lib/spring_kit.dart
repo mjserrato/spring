@@ -10,6 +10,7 @@ import 'animations/slide.anim.dart';
 class Spring extends StatefulWidget {
   final GlobalKey<SpringState> key;
   final AnimType animType;
+  final bool autoPlay;
   final Duration delay;
   final Duration animDuration;
   final Curve curve;
@@ -18,6 +19,7 @@ class Spring extends StatefulWidget {
   Spring(
       {this.key,
       @required this.animType,
+      this.autoPlay: true,
       this.delay: const Duration(milliseconds: 0),
       this.animDuration: const Duration(milliseconds: 1000),
       this.curve: Curves.elasticOut,
@@ -31,13 +33,25 @@ class SpringState extends State<Spring> {
   Playback _playback = Playback.PLAY_FORWARD;
 
   @override
+  void initState() {
+    Future.delayed(Duration.zero,(){
+      setState(() {
+        _playback = widget.autoPlay ? Playback.PLAY_FORWARD : Playback.PAUSE;
+      });
+    });
+    super.initState();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
     return getTweenWidget(_playback);
   }
 
   Widget getTweenWidget(Playback playback) {
     switch (widget.animType) {
-      case AnimType.Slide_From_Right:{
+      case AnimType.Slide_From_Right:
+        {
           return Slide(
               spring: widget,
               playback: playback,
