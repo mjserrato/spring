@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
-import 'package:sized_context/sized_context.dart';
 import 'package:spring/spring.dart';
 
-class SlideFromRight extends StatefulWidget {
+class Slide extends StatefulWidget {
   final Spring spring;
   final Playback playback;
+  final double dx;
+  final double dy;
 
-  SlideFromRight({@required this.spring, @required this.playback});
+  Slide(
+      {@required this.spring,
+      @required this.playback,
+      @required this.dx,
+      @required this.dy});
 
   @override
-  _SlideFromRightState createState() => _SlideFromRightState();
+  _SlideState createState() => _SlideState();
 }
 
-class _SlideFromRightState extends State<SlideFromRight> {
+class _SlideState extends State<Slide> {
   @override
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
-      Track('slide').add(
-          Duration(milliseconds: 1000),
-          Tween<Offset>(
-              begin: Offset(-context.widthPx - 100, 0), end: Offset.zero))
+      Track('slide').add(widget.spring.animDuration,
+          Tween<Offset>(begin: Offset(widget.dx, widget.dy), end: Offset.zero),
+          curve: widget.spring.curve)
     ]);
 
     return ControlledAnimation(
       tween: _tween,
-      duration: widget.spring.delay,
+      delay: widget.spring.delay,
+      duration: widget.spring.animDuration,
       playback: widget.playback,
       builder: (context, anim) {
         return Transform.translate(
