@@ -1,3 +1,6 @@
-## [0.0.1] - TODO: Add release date.
+
+## [0.0.3] - Added Fade in & out animations.
+
+## [0.0.1] - Slide Animations integrated.
 
 * TODO: Describe initial release.

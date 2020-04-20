@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:simple_animations/simple_animations/controlled_animation.dart';
+import 'package:spring/animations/bubble.anim.dart';
+import 'package:spring/animations/fade.dart';
 import 'package:spring/enum.dart';
 import 'package:sized_context/sized_context.dart';
-import 'animations/slide.dart';
+import 'animations/slide.anim.dart';
 
 class Spring extends StatefulWidget {
   final GlobalKey<SpringState> key;
@@ -35,8 +37,7 @@ class SpringState extends State<Spring> {
 
   Widget getTweenWidget(Playback playback) {
     switch (widget.animType) {
-      case AnimType.Slide_From_Right:
-        {
+      case AnimType.Slide_From_Right:{
           return Slide(
               spring: widget,
               playback: playback,
@@ -64,6 +65,15 @@ class SpringState extends State<Spring> {
             playback: playback,
             dx: 0,
             dy: context.heightPx + 100);
+        break;
+      case AnimType.Bubble:
+        return Bubble(spring: widget, playback: playback);
+        break;
+      case AnimType.FadeIn:
+        return Fade(spring: widget, playback: playback, start: 0.0, end: 1.0);
+        break;
+      case AnimType.FadeOut:
+        return Fade(spring: widget, playback: playback, start: 1.0, end: 0.0);
         break;
     }
   }
