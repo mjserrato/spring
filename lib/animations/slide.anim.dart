@@ -5,14 +5,14 @@ import 'package:spring/spring.dart';
 class Slide extends StatefulWidget {
   final Spring spring;
   final Playback playback;
-  final double dx;
-  final double dy;
+  final Offset begin;
+  final Offset end;
 
   Slide(
       {@required this.spring,
       @required this.playback,
-      @required this.dx,
-      @required this.dy});
+      @required this.begin,
+      @required this.end});
 
   @override
   _SlideState createState() => _SlideState();
@@ -23,7 +23,7 @@ class _SlideState extends State<Slide> {
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
       Track('slide').add(widget.spring.animDuration,
-          Tween<Offset>(begin: Offset(widget.dx, widget.dy), end: Offset.zero),
+          Tween<Offset>(begin: widget.begin, end:widget.end),
           curve: widget.spring.curve)
     ]);
 

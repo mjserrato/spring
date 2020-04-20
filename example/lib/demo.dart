@@ -10,7 +10,6 @@ class Demo extends StatefulWidget {
 class _DemoState extends State<Demo> {
   final _key = GlobalKey<SpringState>();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +19,16 @@ class _DemoState extends State<Demo> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           GestureDetector(
-            onTap: (){
+            onTap: () {
               _key.currentState.animate(motion: Motion.Play);
             },
             child: Spring(
-              animType: AnimType.FadeIn,
+              animType: AnimType.Slide_Out_Bottom,
               key: _key,
               autoPlay: true,
-              delay: Duration(milliseconds: 1000),
+              curve: Curves.linear,
+              animDuration: Duration(seconds: 2),
+              delay: Duration(milliseconds:1000),
               child: SizedBox(
                 width: 70,
                 height: 70,
@@ -38,7 +39,6 @@ class _DemoState extends State<Demo> {
               ),
             ),
           )
-
         ],
       )),
     );

@@ -3,6 +3,7 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:simple_animations/simple_animations/controlled_animation.dart';
 import 'package:spring/animations/bubble.anim.dart';
 import 'package:spring/animations/fade.dart';
+import 'package:spring/animations/shake.anim.dart';
 import 'package:spring/enum.dart';
 import 'package:sized_context/sized_context.dart';
 import 'animations/slide.anim.dart';
@@ -21,7 +22,7 @@ class Spring extends StatefulWidget {
       @required this.animType,
       this.autoPlay: true,
       this.delay: const Duration(milliseconds: 0),
-      this.animDuration: const Duration(milliseconds: 1000),
+      @required this.animDuration,
       this.curve: Curves.elasticOut,
       this.child});
 
@@ -34,14 +35,13 @@ class SpringState extends State<Spring> {
 
   @override
   void initState() {
-    Future.delayed(Duration.zero,(){
+    Future.delayed(Duration.zero, () {
       setState(() {
         _playback = widget.autoPlay ? Playback.PLAY_FORWARD : Playback.PAUSE;
       });
     });
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,35 +50,71 @@ class SpringState extends State<Spring> {
 
   Widget getTweenWidget(Playback playback) {
     switch (widget.animType) {
-      case AnimType.Slide_From_Right:
+      case AnimType.Slide_In_Right:
         {
           return Slide(
-              spring: widget,
-              playback: playback,
-              dx: context.widthPx + 100,
-              dy: 0);
+            spring: widget,
+            playback: playback,
+            begin: Offset(context.widthPx + 100, 0),
+            end: Offset.zero,
+          );
         }
         break;
-      case AnimType.Slide_From_Left:
+      case AnimType.Slide_In_Left:
         return Slide(
-            spring: widget,
-            playback: playback,
-            dx: -context.widthPx - 100,
-            dy: 0);
+          spring: widget,
+          playback: playback,
+          begin: Offset(-context.widthPx - 100, 0),
+          end: Offset.zero,
+        );
         break;
-      case AnimType.Slide_From_Top:
+      case AnimType.Slide_In_Top:
         return Slide(
-            spring: widget,
-            playback: playback,
-            dx: 0,
-            dy: -context.heightPx - 100);
+          spring: widget,
+          playback: playback,
+          begin: Offset(0, -context.heightPx - 100),
+          end: Offset.zero,
+        );
         break;
-      case AnimType.Slide_From_Bottom:
+      case AnimType.Slide_In_Bottom:
         return Slide(
-            spring: widget,
-            playback: playback,
-            dx: 0,
-            dy: context.heightPx + 100);
+          spring: widget,
+          playback: playback,
+          begin: Offset(0, context.heightPx + 100),
+          end: Offset.zero,
+        );
+        break;
+      case AnimType.Slide_Out_Right:
+        return Slide(
+          spring: widget,
+          playback: playback,
+          begin: Offset.zero,
+          end: Offset(context.widthPx + 100, 0),
+        );
+        break;
+      case AnimType.Slide_Out_Left:
+        return Slide(
+          spring: widget,
+          playback: playback,
+          end: Offset(-context.widthPx - 100, 0),
+          begin: Offset.zero,
+        );
+        break;
+      case AnimType.Slide_Out_Top:
+        return Slide(
+          spring: widget,
+          playback: playback,
+          end: Offset(0, -context.heightPx - 100),
+          begin: Offset.zero,
+        );
+        break;
+      case AnimType.Slide_Out_Bottom:
+        return Slide(
+          spring: widget,
+          playback: playback,
+          end: Offset(0, context.heightPx + 100),
+          begin: Offset.zero,
+        );
         break;
       case AnimType.Bubble:
         return Bubble(spring: widget, playback: playback);
@@ -88,6 +124,9 @@ class SpringState extends State<Spring> {
         break;
       case AnimType.FadeOut:
         return Fade(spring: widget, playback: playback, start: 1.0, end: 0.0);
+        break;
+      case AnimType.Shake:
+        return Shake(spring: widget, playback: playback);
         break;
     }
   }
