@@ -169,7 +169,6 @@ class SpringState extends State<Spring> {
       case AnimType.Blink:
         return Blink(
           spring: widget,
-          playback: playback,
           animStatus: (status) => widget.animStatus(status),
         );
         break;

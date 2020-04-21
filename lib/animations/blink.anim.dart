@@ -4,12 +4,10 @@ import 'package:spring/spring.dart';
 
 class Blink extends StatefulWidget {
   final Spring spring;
-  final Playback playback;
   final Function(AnimationStatus) animStatus;
 
   Blink({
     @required this.spring,
-    @required this.playback,
     this.animStatus,
   });
 
@@ -29,7 +27,7 @@ class _BlinkState extends State<Blink> {
       tween: _tween,
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
-      playback: widget.playback,
+      playback: Playback.MIRROR,
       animationControllerStatusListener: (status)=>widget.animStatus(status),
       builder: (context, anim) {
         return Opacity(

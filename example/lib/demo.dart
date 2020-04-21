@@ -8,40 +8,34 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  final _key = GlobalKey<SpringState>();
+  final _key = GlobalKey<SpringScaleState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              _key.currentState.animate(motion: Motion.Loop);
-            },
-            child: Spring(
-              animType: AnimType.Blink,
-              key: _key,
-              autoPlay: true,
-              curve: Curves.linear,
-              animStatus: (status)=>print(status),
-              animDuration: Duration(seconds: 2),
-              delay: Duration(milliseconds:0),
-              child: SizedBox(
-                width: 70,
-                height: 70,
-                child: Card(
-                  elevation: 10,
-                  color: Colors.pink,
-                ),
+        child: GestureDetector(
+          onTap: () {
+            _key.currentState.animate(motion: Motion.Play);
+          },
+          child: SpringScale(
+            key: _key,
+            motion: Motion.Pause,
+            animStatus: (status) => null,
+            curve: Curves.elasticOut,
+            begin: 0.5,
+            end: 1.0,
+            child: SizedBox(
+              width: 70,
+              height: 70,
+              child: Card(
+                elevation: 10,
+                color: Colors.red,
               ),
             ),
-          )
-        ],
-      )),
+          ),
+        ),
+      ),
     );
   }
 }

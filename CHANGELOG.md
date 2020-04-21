@@ -1,4 +1,6 @@
 
+## [0.0.7] - SpringScale Widget implemented.
+
 ## [0.0.6] - Blink & Animation Listener implemented.
 
 ## [0.0.5] - Bubble, Shake, Rotate animation added
