@@ -7,7 +7,7 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  final _key = GlobalKey<SpringTranslateState>();
+  final _key = GlobalKey<SpringState>();
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +15,20 @@ class _DemoState extends State<Demo> {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            _key.currentState.animate(motion: Motion.Play);
+            _key.currentState.animate(motion: Motion.Mirror);
           },
-          child: SpringTranslate(
+          child: Spring(
             key: _key,
-            motion: Motion.Play,
+            animType: AnimType.Fade_Out_Bottom,
+            animDuration: Duration(milliseconds: 1000),
             animStatus: (status) => null,
-            curve: Curves.linear,
-            beginOffset: Offset(-100,-200),
-            endOffset: Offset.zero,
+            curve: Curves.elasticInOut,
             child: SizedBox(
               width: 70,
               height: 70,
               child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
                 elevation: 10,
                 color: Colors.red,
               ),
