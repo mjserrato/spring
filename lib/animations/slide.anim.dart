@@ -7,12 +7,14 @@ class Slide extends StatefulWidget {
   final Playback playback;
   final Offset begin;
   final Offset end;
+  final Function(AnimationStatus) animStatus;
 
   Slide(
       {@required this.spring,
       @required this.playback,
       @required this.begin,
-      @required this.end});
+      @required this.end,
+      this.animStatus});
 
   @override
   _SlideState createState() => _SlideState();
@@ -23,7 +25,7 @@ class _SlideState extends State<Slide> {
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
       Track('slide').add(widget.spring.animDuration,
-          Tween<Offset>(begin: widget.begin, end:widget.end),
+          Tween<Offset>(begin: widget.begin, end: widget.end),
           curve: widget.spring.curve)
     ]);
 
@@ -32,6 +34,7 @@ class _SlideState extends State<Slide> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
+      animationControllerStatusListener: (status)=>widget.animStatus(status),
       builder: (context, anim) {
         return Transform.translate(
           offset: anim['slide'],

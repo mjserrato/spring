@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:simple_animations/simple_animations/controlled_animation.dart';
+import 'package:spring/animations/blink.anim.dart';
 import 'package:spring/animations/bubble.anim.dart';
 import 'package:spring/animations/fade.dart';
 import 'package:spring/animations/rotate.anim.dart';
@@ -16,6 +17,7 @@ class Spring extends StatefulWidget {
   final Duration delay;
   final Duration animDuration;
   final Curve curve;
+  final Function(AnimationStatus) animStatus;
   final Widget child;
 
   Spring(
@@ -25,7 +27,8 @@ class Spring extends StatefulWidget {
       this.delay: const Duration(milliseconds: 0),
       @required this.animDuration,
       this.curve: Curves.elasticOut,
-      this.child});
+      this.animStatus,
+      @required this.child});
 
   @override
   SpringState createState() => SpringState();
@@ -56,8 +59,9 @@ class SpringState extends State<Spring> {
           return Slide(
             spring: widget,
             playback: playback,
-            begin: Offset(context.widthPx/2 +100, 0),
+            begin: Offset(context.widthPx / 2 + 100, 0),
             end: Offset.zero,
+            animStatus: (status) => widget.animStatus(status),
           );
         }
         break;
@@ -65,24 +69,27 @@ class SpringState extends State<Spring> {
         return Slide(
           spring: widget,
           playback: playback,
-          begin: Offset(-context.widthPx/2 - 100, 0),
+          begin: Offset(-context.widthPx / 2 - 100, 0),
           end: Offset.zero,
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Slide_In_Top:
         return Slide(
           spring: widget,
           playback: playback,
-          begin: Offset(0, -context.heightPx/2- 100),
+          begin: Offset(0, -context.heightPx / 2 - 100),
           end: Offset.zero,
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Slide_In_Bottom:
         return Slide(
           spring: widget,
           playback: playback,
-          begin: Offset(0, context.heightPx/2 + 100),
+          begin: Offset(0, context.heightPx / 2 + 100),
           end: Offset.zero,
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Slide_Out_Right:
@@ -90,47 +97,81 @@ class SpringState extends State<Spring> {
           spring: widget,
           playback: playback,
           begin: Offset.zero,
-          end: Offset(context.widthPx/2 + 100, 0),
+          end: Offset(context.widthPx / 2 + 100, 0),
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Slide_Out_Left:
         return Slide(
           spring: widget,
           playback: playback,
-          end: Offset(-context.widthPx/2 - 100, 0),
+          end: Offset(-context.widthPx / 2 - 100, 0),
           begin: Offset.zero,
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Slide_Out_Top:
         return Slide(
           spring: widget,
           playback: playback,
-          end: Offset(0, -context.heightPx/2 - 100),
+          end: Offset(0, -context.heightPx / 2 - 100),
           begin: Offset.zero,
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Slide_Out_Bottom:
         return Slide(
           spring: widget,
           playback: playback,
-          end: Offset(0, context.heightPx/2 + 100),
+          end: Offset(0, context.heightPx / 2 + 100),
           begin: Offset.zero,
+          animStatus: (status) => widget.animStatus(status),
         );
         break;
       case AnimType.Bubble:
-        return Bubble(spring: widget, playback: playback);
+        return Bubble(
+          spring: widget,
+          playback: playback,
+          animStatus: (status) => widget.animStatus(status),
+        );
         break;
       case AnimType.FadeIn:
-        return Fade(spring: widget, playback: playback, start: 0.0, end: 1.0);
+        return Fade(
+            spring: widget,
+            playback: playback,
+            start: 0.0,
+            end: 1.0,
+            animStatus: (status) => widget.animStatus(status));
         break;
       case AnimType.FadeOut:
-        return Fade(spring: widget, playback: playback, start: 1.0, end: 0.0);
+        return Fade(
+          spring: widget,
+          playback: playback,
+          start: 1.0,
+          end: 0.0,
+          animStatus: (status) => widget.animStatus(status),
+        );
         break;
       case AnimType.Shake:
-        return Shake(spring: widget, playback: playback);
+        return Shake(
+          spring: widget,
+          playback: playback,
+          animStatus: (status) => widget.animStatus(status),
+        );
         break;
       case AnimType.Rotate:
-       return Rotate(spring: widget, playback: playback);
+        return Rotate(
+          spring: widget,
+          playback: playback,
+          animStatus: (status) => widget.animStatus(status),
+        );
+        break;
+      case AnimType.Blink:
+        return Blink(
+          spring: widget,
+          playback: playback,
+          animStatus: (status) => widget.animStatus(status),
+        );
         break;
     }
   }

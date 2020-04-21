@@ -1,32 +1,28 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:spring/spring.dart';
-import 'package:vector_math/vector_math_64.dart';
 
-class Shake extends StatefulWidget {
+class Blink extends StatefulWidget {
   final Spring spring;
   final Playback playback;
   final Function(AnimationStatus) animStatus;
 
-  Shake({
+  Blink({
     @required this.spring,
     @required this.playback,
     this.animStatus,
   });
 
   @override
-  _ShakeState createState() => _ShakeState();
+  _BlinkState createState() => _BlinkState();
 }
 
-class _ShakeState extends State<Shake> {
+class _BlinkState extends State<Blink> {
   @override
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
-      Track('shake').add(
-        widget.spring.animDuration,
-        Tween<double>(begin: 50, end: 120),
-      )
+      Track('blink').add(
+          widget.spring.animDuration, Tween<double>(begin: 0, end: 1),curve: Curves.fastLinearToSlowEaseIn)
     ]);
 
     return ControlledAnimation(
@@ -36,16 +32,11 @@ class _ShakeState extends State<Shake> {
       playback: widget.playback,
       animationControllerStatusListener: (status)=>widget.animStatus(status),
       builder: (context, anim) {
-        return Transform(
+        return Opacity(
+          opacity: anim['blink'],
           child: widget.spring.child,
-          transform: Matrix4.translation(_shake(anim['shake'])),
         );
       },
     );
-  }
-
-  Vector3 _shake(double progress) {
-    double offset = sin(progress * pi * 10.0);
-    return Vector3(offset * 4, 0.0, 0.0);
   }
 }

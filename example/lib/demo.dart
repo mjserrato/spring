@@ -23,10 +23,11 @@ class _DemoState extends State<Demo> {
               _key.currentState.animate(motion: Motion.Loop);
             },
             child: Spring(
-              animType: AnimType.Rotate,
+              animType: AnimType.Blink,
               key: _key,
               autoPlay: true,
               curve: Curves.linear,
+              animStatus: (status)=>print(status),
               animDuration: Duration(seconds: 2),
               delay: Duration(milliseconds:0),
               child: SizedBox(

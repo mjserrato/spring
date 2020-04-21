@@ -5,10 +5,12 @@ import 'package:spring/spring.dart';
 class Bubble extends StatefulWidget {
   final Spring spring;
   final Playback playback;
+  final Function(AnimationStatus) animStatus;
 
   Bubble({
     @required this.spring,
     @required this.playback,
+    this.animStatus,
   });
 
   @override
@@ -29,6 +31,7 @@ class _BubbleState extends State<Bubble> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
+      animationControllerStatusListener: (status)=>widget.animStatus(status),
       builder: (context, anim) {
         return Transform.scale(
           scale: anim['Bubble'],

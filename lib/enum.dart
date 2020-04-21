@@ -12,6 +12,7 @@ enum AnimType {
   Bubble,
   Rotate,
   Shake,
+  Blink
 }
 
 enum Motion { Play, Pause, Reverse, Loop, Mirror }

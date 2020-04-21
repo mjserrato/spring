@@ -7,12 +7,14 @@ class Fade extends StatefulWidget {
   final Playback playback;
   final double start;
   final double end;
+  final Function(AnimationStatus) animStatus;
 
   Fade({
     @required this.spring,
     @required this.playback,
     @required this.start ,
     @required this.end,
+    this.animStatus,
   });
 
   @override
@@ -32,6 +34,7 @@ class _FadeState extends State<Fade> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
+      animationControllerStatusListener: (status)=>widget.animStatus(status),
       builder: (context, anim) {
         return Opacity(
           opacity: anim['fade'],

@@ -7,10 +7,12 @@ import 'package:spring/spring.dart';
 class Rotate extends StatefulWidget {
   final Spring spring;
   final Playback playback;
+  final Function(AnimationStatus) animStatus;
 
   Rotate({
     @required this.spring,
     @required this.playback,
+    this.animStatus,
   });
 
   @override
@@ -32,6 +34,7 @@ class _RotateState extends State<Rotate> {
       duration: widget.spring.animDuration,
       playback: widget.playback,
       child: widget.spring.child,
+      animationControllerStatusListener: (status)=>widget.animStatus(status),
       builderWithChild: (context, child, anim) {
         return Transform.rotate(
           angle: anim["rotation"],
