@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spring/spring.dart';
 import 'package:spring/spring_kit.dart';
+import 'package:spring/springs/spring_rotate.dart';
 
 class Demo extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  final _key = GlobalKey<SpringScaleState>();
+  final _key = GlobalKey<SpringTranslateState>();
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,13 @@ class _DemoState extends State<Demo> {
           onTap: () {
             _key.currentState.animate(motion: Motion.Play);
           },
-          child: SpringScale(
+          child: SpringTranslate(
             key: _key,
-            motion: Motion.Pause,
+            motion: Motion.Play,
             animStatus: (status) => null,
-            curve: Curves.elasticOut,
-            begin: 0.5,
-            end: 1.0,
+            curve: Curves.linear,
+            beginOffset: Offset(-100,-200),
+            endOffset: Offset.zero,
             child: SizedBox(
               width: 70,
               height: 70,

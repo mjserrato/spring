@@ -23,9 +23,9 @@ class _RotateState extends State<Rotate> {
   @override
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
-      Track("rotation").add(Duration(seconds: 1), ConstantTween(0.0)).add(Duration(seconds: 3),
-            Tween(begin: 0.0, end: pi / 1),curve: widget.spring.curve
-          )
+      Track("rotation").add(widget.spring.animDuration, ConstantTween(0.0)).add(
+          widget.spring.animDuration, Tween(begin: 0.0, end: pi / 1),
+          curve: widget.spring.curve)
     ]);
 
     return ControlledAnimation(
@@ -34,7 +34,7 @@ class _RotateState extends State<Rotate> {
       duration: widget.spring.animDuration,
       playback: widget.playback,
       child: widget.spring.child,
-      animationControllerStatusListener: (status)=>widget.animStatus(status),
+      animationControllerStatusListener: (status) => widget.animStatus(status),
       builderWithChild: (context, child, anim) {
         return Transform.rotate(
           angle: anim["rotation"],

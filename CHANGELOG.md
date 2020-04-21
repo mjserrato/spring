@@ -1,4 +1,6 @@
 
+## [0.0.8] - SpringRotate & SpringTranslate Widget Implemented.
+
 ## [0.0.7] - SpringScale Widget implemented.
 
 ## [0.0.6] - Blink & Animation Listener implemented.
