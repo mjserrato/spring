@@ -20,10 +20,10 @@ class _DemoState extends State<Demo> {
         children: <Widget>[
           GestureDetector(
             onTap: () {
-              _key.currentState.animate(motion: Motion.Play);
+              _key.currentState.animate(motion: Motion.Loop);
             },
             child: Spring(
-              animType: AnimType.Slide_Out_Bottom,
+              animType: AnimType.Rotate,
               key: _key,
               autoPlay: true,
               curve: Curves.linear,

@@ -10,6 +10,7 @@ enum AnimType {
   FadeIn,
   FadeOut,
   Bubble,
+  Rotate,
   Shake,
 }
 

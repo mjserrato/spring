@@ -3,6 +3,7 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:simple_animations/simple_animations/controlled_animation.dart';
 import 'package:spring/animations/bubble.anim.dart';
 import 'package:spring/animations/fade.dart';
+import 'package:spring/animations/rotate.anim.dart';
 import 'package:spring/animations/shake.anim.dart';
 import 'package:spring/enum.dart';
 import 'package:sized_context/sized_context.dart';
@@ -127,6 +128,9 @@ class SpringState extends State<Spring> {
         break;
       case AnimType.Shake:
         return Shake(spring: widget, playback: playback);
+        break;
+      case AnimType.Rotate:
+       return Rotate(spring: widget, playback: playback);
         break;
     }
   }
