@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spring/spring.dart';
-import 'package:spring/spring_kit.dart';
-import 'package:spring/springs/spring_rotate.dart';
 
 class Demo extends StatefulWidget {
   @override

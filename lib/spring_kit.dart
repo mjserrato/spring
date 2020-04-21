@@ -172,6 +172,8 @@ class SpringState extends State<Spring> {
           animStatus: (status) => widget.animStatus(status),
         );
         break;
+      default:
+        return widget.child;
     }
   }
 

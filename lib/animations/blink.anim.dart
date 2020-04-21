@@ -20,7 +20,8 @@ class _BlinkState extends State<Blink> {
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
       Track('blink').add(
-          widget.spring.animDuration, Tween<double>(begin: 0, end: 1),curve: Curves.fastLinearToSlowEaseIn)
+          widget.spring.animDuration, Tween<double>(begin: 0, end: 1),
+          curve: Curves.fastLinearToSlowEaseIn)
     ]);
 
     return ControlledAnimation(
@@ -28,7 +29,7 @@ class _BlinkState extends State<Blink> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: Playback.MIRROR,
-      animationControllerStatusListener: (status)=>widget.animStatus(status),
+      animationControllerStatusListener: (status) => widget.animStatus(status),
       builder: (context, anim) {
         return Opacity(
           opacity: anim['blink'],

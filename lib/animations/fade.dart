@@ -12,7 +12,7 @@ class Fade extends StatefulWidget {
   Fade({
     @required this.spring,
     @required this.playback,
-    @required this.start ,
+    @required this.start,
     @required this.end,
     this.animStatus,
   });
@@ -26,7 +26,9 @@ class _FadeState extends State<Fade> {
   Widget build(BuildContext context) {
     final _tween = MultiTrackTween([
       Track('fade').add(
-          widget.spring.animDuration, Tween(begin: widget.start, end: widget.end),)
+        widget.spring.animDuration,
+        Tween(begin: widget.start, end: widget.end),
+      )
     ]);
 
     return ControlledAnimation(
@@ -34,7 +36,7 @@ class _FadeState extends State<Fade> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
-      animationControllerStatusListener: (status)=>widget.animStatus(status),
+      animationControllerStatusListener: (status) => widget.animStatus(status),
       builder: (context, anim) {
         return Opacity(
           opacity: anim['fade'],

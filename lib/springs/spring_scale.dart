@@ -24,8 +24,8 @@ class SpringScale extends StatefulWidget {
       this.animDuration: const Duration(milliseconds: 1000),
       this.curve: Curves.linear,
       @required this.animStatus,
-        this.alignment : Alignment.center,
-        this.offset,
+      this.alignment: Alignment.center,
+      this.offset,
       @required this.child});
 
   @override
@@ -84,7 +84,6 @@ class SpringScaleState extends State<SpringScale> {
       },
     );
   }
-
 
   void animate({@required Motion motion}) {
     setState(() {

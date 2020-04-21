@@ -34,7 +34,7 @@ class _SlideState extends State<Slide> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
-      animationControllerStatusListener: (status)=>widget.animStatus(status),
+      animationControllerStatusListener: (status) => widget.animStatus(status),
       builder: (context, anim) {
         return Transform.translate(
           offset: anim['slide'],

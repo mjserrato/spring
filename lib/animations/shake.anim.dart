@@ -34,7 +34,7 @@ class _ShakeState extends State<Shake> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
-      animationControllerStatusListener: (status)=>widget.animStatus(status),
+      animationControllerStatusListener: (status) => widget.animStatus(status),
       builder: (context, anim) {
         return Transform(
           child: widget.spring.child,

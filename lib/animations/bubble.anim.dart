@@ -31,7 +31,7 @@ class _BubbleState extends State<Bubble> {
       delay: widget.spring.delay,
       duration: widget.spring.animDuration,
       playback: widget.playback,
-      animationControllerStatusListener: (status)=>widget.animStatus(status),
+      animationControllerStatusListener: (status) => widget.animStatus(status),
       builder: (context, anim) {
         return Transform.scale(
           scale: anim['Bubble'],
