@@ -55,7 +55,7 @@ class SpringState extends State<Spring> {
           return Slide(
             spring: widget,
             playback: playback,
-            begin: Offset(context.widthPx + 100, 0),
+            begin: Offset(context.widthPx/2 +100, 0),
             end: Offset.zero,
           );
         }
@@ -64,7 +64,7 @@ class SpringState extends State<Spring> {
         return Slide(
           spring: widget,
           playback: playback,
-          begin: Offset(-context.widthPx - 100, 0),
+          begin: Offset(-context.widthPx/2 - 100, 0),
           end: Offset.zero,
         );
         break;
@@ -72,7 +72,7 @@ class SpringState extends State<Spring> {
         return Slide(
           spring: widget,
           playback: playback,
-          begin: Offset(0, -context.heightPx - 100),
+          begin: Offset(0, -context.heightPx/2- 100),
           end: Offset.zero,
         );
         break;
@@ -80,7 +80,7 @@ class SpringState extends State<Spring> {
         return Slide(
           spring: widget,
           playback: playback,
-          begin: Offset(0, context.heightPx + 100),
+          begin: Offset(0, context.heightPx/2 + 100),
           end: Offset.zero,
         );
         break;
@@ -89,14 +89,14 @@ class SpringState extends State<Spring> {
           spring: widget,
           playback: playback,
           begin: Offset.zero,
-          end: Offset(context.widthPx + 100, 0),
+          end: Offset(context.widthPx/2 + 100, 0),
         );
         break;
       case AnimType.Slide_Out_Left:
         return Slide(
           spring: widget,
           playback: playback,
-          end: Offset(-context.widthPx - 100, 0),
+          end: Offset(-context.widthPx/2 - 100, 0),
           begin: Offset.zero,
         );
         break;
@@ -104,7 +104,7 @@ class SpringState extends State<Spring> {
         return Slide(
           spring: widget,
           playback: playback,
-          end: Offset(0, -context.heightPx - 100),
+          end: Offset(0, -context.heightPx/2 - 100),
           begin: Offset.zero,
         );
         break;
@@ -112,7 +112,7 @@ class SpringState extends State<Spring> {
         return Slide(
           spring: widget,
           playback: playback,
-          end: Offset(0, context.heightPx + 100),
+          end: Offset(0, context.heightPx/2 + 100),
           begin: Offset.zero,
         );
         break;

@@ -28,7 +28,7 @@ class _DemoState extends State<Demo> {
               autoPlay: true,
               curve: Curves.linear,
               animDuration: Duration(seconds: 2),
-              delay: Duration(milliseconds:1000),
+              delay: Duration(milliseconds:0),
               child: SizedBox(
                 width: 70,
                 height: 70,
