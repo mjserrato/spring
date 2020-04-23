@@ -11,28 +11,28 @@ Spring provide pre built fully customizable animation to boost your productivty.
   -  Slide_In_Right
   -  Fade_In_Right
   -  Slide_In_Left
-  - ##### Fade_In_Left
-  - ##### Slide_In_Top
-  - ##### Fade_In_Top
-  - ##### Slide_In_Bottom
-  - ##### Fade_In_Bottom
-  - ##### Slide_Out_Right
-  - ##### Fade_Out_Right
-  - ##### Slide_Out_Left
-  - ##### Fade_Out_Left
-  - ##### Slide_Out_Top
-  - ##### Fade_Out_Top
-  - ##### Slide_Out_Bottom
-  - ##### Fade_Out_Bottom
-  - ##### FadeIn
-  - ##### FadeOut
-  - ##### Bubble
-  - ##### Rotate
-  - ##### Shake
-  - ##### PoP
-  - ##### FlipX
-  - ##### FlipY
-  - ##### Blink
+  -  Fade_In_Left
+  -  Slide_In_Top
+  -  Fade_In_Top
+  -  Slide_In_Bottom
+  -  Fade_In_Bottom
+  -  Slide_Out_Right
+  -  Fade_Out_Right
+  -  Slide_Out_Left
+  -  Fade_Out_Left
+  -  Slide_Out_Top
+  -  Fade_Out_Top
+  -  Slide_Out_Bottom
+  -  Fade_Out_Bottom
+  -  FadeIn
+  -  FadeOut
+  -  Bubble
+  -  Rotate
+  -  Shake
+  -  PoP
+  -  FlipX
+  -  FlipY
+  -  Blink
 
 ## Usage:-
 
