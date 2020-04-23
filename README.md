@@ -5,7 +5,7 @@
 Spring is a simple & power full animation kit. inspired by Android's Flubber.
 Spring provide pre built fully customizable animation to boost your productivty.
 
-<img src="https://github.com/KaushickSArgekar/spring/blob/master/doc/spring.gif" width="220" height="480">
+[Spring](https://github.com/KaushickSArgekar/spring/blob/master/doc/spring.gif =220*480)
 
 ## Customizable pre-built animations
   -  Slide_In_Right
