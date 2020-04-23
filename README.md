@@ -98,6 +98,7 @@ SpringTranslate(
 ## SpringScale
 
 <img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/scale.gif" width="120" height="240">
+
 ``` dart
  SpringScale(
     motion: Motion.Mirror,
@@ -108,8 +109,11 @@ SpringTranslate(
         size: 100,
     )),
 ```
+
 ## SpringRotate
 <img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/rotate.gif" width="120" height="240">
+
+
 ``` dart
 SpringRotate(
     motion: Motion.Mirror,
