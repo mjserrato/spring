@@ -139,7 +139,7 @@ SpringTranslate(
 ```
 
 ## SpringRotate
-![Rotate](https://github.com/KaushickSArgekar/spring/blob/master/doc/rotate.gif")
+![Rotate](https://github.com/KaushickSArgekar/spring/blob/master/doc/rotate.gif)
 
 
 ``` dart
