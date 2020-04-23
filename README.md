@@ -1,14 +1,111 @@
-# spring
+# Spring
 
-A pre built animation kit.
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-## Getting Started
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+Spring is a simple & power full animation kit. inspired by Android's Flubber.
+Spring provide pre built fully customizable animation to boost your productivty.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Customizable pre-built animations
+  - #### [Slide_In_Right]()
+  - #### [Fade_In_Right]()
+  - #### [Slide_In_Left]()
+  - #### [Fade_In_Left]()
+  - #### [Slide_In_Top]()
+  - #### [Fade_In_Top]()
+  - #### [Slide_In_Bottom]()
+  - #### [Fade_In_Bottom]()
+  - #### [Slide_Out_Right]()
+  - #### [Fade_Out_Right]()
+  - #### [Slide_Out_Left]()
+  - #### [Fade_Out_Left]()
+  - #### [Slide_Out_Top]()
+  - #### [Fade_Out_Top]()
+  - #### [Slide_Out_Bottom]()
+  - #### [Fade_Out_Bottom]()
+  - #### [FadeIn]()
+  - #### [FadeOut]()
+  - #### [Bubble]()
+  - #### [Rotate]()
+  - #### [Shake]()
+  - #### [PoP]()
+  - #### [FlipX]()
+  - #### [FlipY]()
+  - #### [Blink]()
+
+## Spring super widgets!
+  - ### [SprinTween]()
+  - ### [SpringScale]()
+  - ### [SpringRotate]()
+
+## Usage:-
+
+``` dart
+import 'package:flutter/material.dart';
+import 'package:spring/spring.dart';
+
+class Demo extends StatefulWidget {
+  @override
+  _DemoState createState() => _DemoState();
+}
+
+class _DemoState extends State<Demo> {
+  final _key = GlobalKey<SpringState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            _key.currentState.animate(motion: Motion.Mirror);
+          },
+          child: Spring(
+            key: _key,
+            delay: Duration(milliseconds: 100),
+            animType: AnimType.Slide_In_Right,
+            autoPlay: true,
+            animDuration: Duration(milliseconds: 7000),
+            animStatus: (status) => null,
+            curve: Curves.elasticInOut,
+            child: SizedBox(
+              width: 70,
+              height: 70,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                elevation: 10,
+                color: Colors.red,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+
+
+
+
+### Development
+
+Want to contribute? Great!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
