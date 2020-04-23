@@ -1,7 +1,8 @@
+## [1.0.1] - Pop anim & documentation updated.
 
-## [1.0.0] -Fade Slide ,Flip & Pop animation added .
+## [1.0.0] - Fade Slide ,Flip & Pop animation added .
 
-## [0.0.9] -Code improvement.
+## [0.0.9] - Code improvement.
 
 ## [0.0.8] - SpringRotate & SpringTranslate Widget Implemented.
 
