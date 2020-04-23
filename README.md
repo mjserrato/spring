@@ -1,7 +1,5 @@
 # Spring
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Spring is a simple & power full animation kit. inspired by Android's Flubber.
@@ -10,9 +8,9 @@ Spring provide pre built fully customizable animation to boost your productivty.
 <img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/spring.gif" width="220" height="480">
 
 ## Customizable pre-built animations
-  - ##### Slide_In_Right
-  - ##### Fade_In_Right
-  - ##### Slide_In_Left
+  -  Slide_In_Right
+  -  Fade_In_Right
+  -  Slide_In_Left
   - ##### Fade_In_Left
   - ##### Slide_In_Top
   - ##### Fade_In_Top
