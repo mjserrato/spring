@@ -7,37 +7,34 @@
 Spring is a simple & power full animation kit. inspired by Android's Flubber.
 Spring provide pre built fully customizable animation to boost your productivty.
 
-## Customizable pre-built animations
-  - #### [Slide_In_Right]()
-  - #### [Fade_In_Right]()
-  - #### [Slide_In_Left]()
-  - #### [Fade_In_Left]()
-  - #### [Slide_In_Top]()
-  - #### [Fade_In_Top]()
-  - #### [Slide_In_Bottom]()
-  - #### [Fade_In_Bottom]()
-  - #### [Slide_Out_Right]()
-  - #### [Fade_Out_Right]()
-  - #### [Slide_Out_Left]()
-  - #### [Fade_Out_Left]()
-  - #### [Slide_Out_Top]()
-  - #### [Fade_Out_Top]()
-  - #### [Slide_Out_Bottom]()
-  - #### [Fade_Out_Bottom]()
-  - #### [FadeIn]()
-  - #### [FadeOut]()
-  - #### [Bubble]()
-  - #### [Rotate]()
-  - #### [Shake]()
-  - #### [PoP]()
-  - #### [FlipX]()
-  - #### [FlipY]()
-  - #### [Blink]()
+![Animation](https://github.com/KaushickSArgekar/spring/blob/master/docs/spring.gif)
 
-## Spring super widgets!
-  - ### [SprinTween]()
-  - ### [SpringScale]()
-  - ### [SpringRotate]()
+## Customizable pre-built animations
+  - ##### Slide_In_Right
+  - ##### Fade_In_Right
+  - ##### Slide_In_Left
+  - ##### Fade_In_Left
+  - ##### Slide_In_Top
+  - ##### Fade_In_Top
+  - ##### Slide_In_Bottom
+  - ##### Fade_In_Bottom
+  - ##### Slide_Out_Right
+  - ##### Fade_Out_Right
+  - ##### Slide_Out_Left
+  - ##### Fade_Out_Left
+  - ##### Slide_Out_Top
+  - ##### Fade_Out_Top
+  - ##### Slide_Out_Bottom
+  - ##### Fade_Out_Bottom
+  - ##### FadeIn
+  - ##### FadeOut
+  - ##### Bubble
+  - ##### Rotate
+  - ##### Shake
+  - ##### PoP
+  - ##### FlipX
+  - ##### FlipY
+  - ##### Blink
 
 ## Usage:-
 
@@ -85,8 +82,11 @@ class _DemoState extends State<Demo> {
     );
   }
 }
-
 ```
+## Spring super widgets!
+  - ### [SprinTween]()
+  - ### [SpringScale]()
+  - ### [SpringRotate]()
 
 
 
