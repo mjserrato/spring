@@ -83,8 +83,7 @@ class _DemoState extends State<Demo> {
 ```
 ## Spring super widgets!
   - ### [SprinTween]()
-  - ### [SpringScale]()
-  - ### [SpringRotate]()
+
 
 
 
