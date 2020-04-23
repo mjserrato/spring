@@ -63,7 +63,9 @@ class _DemoState extends State<Demo> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                SpringExample(AnimType.Fade_In_Bottom,),
+                SpringExample(
+                  AnimType.Fade_In_Bottom,
+                ),
                 SpringExample(AnimType.FadeOut),
                 SpringExample(AnimType.Fade_In_Right)
               ],
@@ -95,7 +97,9 @@ class _SpringExampleState extends State<SpringExample> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        _key.currentState.animate(motion: Motion.Mirror);
+      },
       child: Spring(
         key: _key,
         motion: Motion.Mirror,
