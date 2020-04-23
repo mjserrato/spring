@@ -81,6 +81,22 @@ class _DemoState extends State<Demo> {
   }
 }
 ```
+
+## Controlling the animations
+
+You can controll the animation using the SpringState Key.
+
+``` dart
+final _key = GlobalKey<SpringState>();
+
+Spring(
+  key=_key
+);
+
+_key. _key.currentState.animate(motion: Motion.Loop); //you can call this on button click or inside methods.
+
+```
+
 ## SpringTranslate
 
 <img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/translate.gif" width="120" height="240">
