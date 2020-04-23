@@ -81,28 +81,47 @@ class _DemoState extends State<Demo> {
   }
 }
 ```
-## Spring super widgets!
-  - ### [SprinTween]()
+## SpringTranslate
 
+<img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/translate.gif" width="120" height="240">
 
+``` dart
+SpringTranslate(
+    motion: Motion.Mirror,
+    beginOffset: Offset(100, 200),
+    endOffset: Offset.zero,
+    animStatus: (T) => print(T),
+    child: FlutterLogo(
+    size: 100,
+));
+```
+## SpringScale
 
-
+<img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/scale.gif" width="120" height="240">
+``` dart
+ SpringScale(
+    motion: Motion.Mirror,
+    begin: 0.0,
+    end: 1.0,
+    animStatus: (T) => print(T),
+    child: FlutterLogo(
+        size: 100,
+    )),
+```
+## SpringRotate
+<img src="https://github.com/KaushickSArgekar/spring/blob/master/docs/rotate.gif" width="120" height="240">
+``` dart
+SpringRotate(
+    motion: Motion.Mirror,
+    begin: 2.0,
+    end: 6.0,
+    animStatus: (T) => print(T),
+    child: FlutterLogo(
+             size: 100,
+    )),
+```
 
 
 ### Development
 
 Want to contribute? Great!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
