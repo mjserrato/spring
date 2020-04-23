@@ -1,3 +1,5 @@
+## [1.0.2] - hotfix.
+
 ## [1.0.1] - Pop anim & documentation updated.
 
 ## [1.0.0] - Fade Slide ,Flip & Pop animation added .
