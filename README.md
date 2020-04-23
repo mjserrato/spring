@@ -107,7 +107,7 @@ Spring Motion types.
 *  Motion.Mirror
 *  Motion.Reverse
 
-### Spring Super Widgets.
+# Spring Super Widgets.
 
 ## SpringTranslate
 
