@@ -5,7 +5,7 @@
 Spring is a simple & power full animation kit. inspired by Android's Flubber.
 Spring provide pre built fully customizable animation to boost your productivty.
 
-![Spring](https://github.com/KaushickSArgekar/spring/blob/master/doc/spring.gif =220*480)
+![Spring](https://github.com/KaushickSArgekar/spring/blob/master/doc/spring.gif)
 
 ## Customizable pre-built animations
   -  Slide_In_Right
@@ -111,7 +111,7 @@ Spring Motion types.
 
 ## SpringTranslate
 
-<img src="https://github.com/KaushickSArgekar/spring/blob/master/doc/translate.gif" width="120" height="240">
+![Translate](https://github.com/KaushickSArgekar/spring/blob/master/doc/translate.gif)
 
 ``` dart
 SpringTranslate(
@@ -125,7 +125,7 @@ SpringTranslate(
 ```
 ## SpringScale
 
-<img src="https://github.com/KaushickSArgekar/spring/blob/master/doc/scale.gif" width="120" height="240">
+![Scale](https://github.com/KaushickSArgekar/spring/blob/master/doc/scale.gif)
 
 ``` dart
  SpringScale(
@@ -139,7 +139,7 @@ SpringTranslate(
 ```
 
 ## SpringRotate
-<img src="https://github.com/KaushickSArgekar/spring/blob/master/doc/rotate.gif" width="120" height="240">
+![Rotate](https://github.com/KaushickSArgekar/spring/blob/master/doc/rotate.gif")
 
 
 ``` dart
