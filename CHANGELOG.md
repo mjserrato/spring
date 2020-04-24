@@ -1,3 +1,8 @@
+
+## [1.0.4] - Readme updated
+
+## [1.0.3] - hotfix.
+
 ## [1.0.2] - hotfix.
 
 ## [1.0.1] - Pop anim & documentation updated.

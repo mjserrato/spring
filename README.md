@@ -39,6 +39,7 @@ Spring provide pre built fully customizable animation to boost your productivty.
 ``` dart
 import 'package:flutter/material.dart';
 import 'package:spring/spring.dart';
+import 'package:spring/enum.dart';
 
 class Demo extends StatefulWidget {
   @override
@@ -60,7 +61,7 @@ class _DemoState extends State<Demo> {
             key: _key,
             delay: Duration(milliseconds: 100),
             animType: AnimType.Slide_In_Right,
-            autoPlay: true,
+            motion: Motion.Mirror,
             animDuration: Duration(milliseconds: 7000),
             animStatus: (status) => null,
             curve: Curves.elasticInOut,
