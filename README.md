@@ -39,6 +39,7 @@ Spring provide pre built fully customizable animation to boost your productivty.
 ``` dart
 import 'package:flutter/material.dart';
 import 'package:spring/spring.dart';
+import 'package:spring/enum.dart';
 
 class Demo extends StatefulWidget {
   @override
